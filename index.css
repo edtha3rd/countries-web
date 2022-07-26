@@ -44,6 +44,10 @@
   height: 72px;
   padding-top: 30px;
   position: absolute;
+  @media screen (max-width: 768px) {
+    font-size: large;
+    height: 48px;
+  }
 }
 
 #results {

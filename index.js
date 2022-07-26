@@ -62,7 +62,7 @@ const showCountry = (country) => {
   result.appendChild(cardBody)
 
   //append result card to results div
-  results.replaceChildren(result)
+  results.appendChild(result)
 
   //   cName.textContent = `Country: ${country.name.common}`
   //   offName.textContent = `Country: ${country.name.official}`
