@@ -1,9 +1,10 @@
 #aka {
   background-color: cadetblue;
-  color: grey;
+  color: coral;
   font-size: small;
   margin-left: 5px;
   font-style: oblique;
+  padding: 2px;
   text-transform: uppercase;
 }
 
@@ -16,11 +17,11 @@
 }
 
 .card {
-  border: 2px solid #0077cc;
+  border: 4px solid #0077cc;
   border-radius: 1rem;
   margin: 5px;
   padding: 12px;
-  width: 18rem;
+  width: 26rem;
 }
 
 #errorMessage {
@@ -30,10 +31,10 @@
 #flag {
   border: 1px solid #0077cc;
   border-radius: 0.5rem;
-  height: 50px;
-  margin-bottom: 5px;
+  height: 100px;
+  margin: 5px 0px;
   padding: 2px;
-  width: 150px;
+  width: 180px;
 }
 
 #footer {
@@ -43,7 +44,7 @@
   font-size: x-large;
   height: 72px;
   padding-top: 30px;
-  position: absolute;
+  position: relative;
   @media screen (max-width: 768px) {
     font-size: large;
     height: 48px;
@@ -53,6 +54,10 @@
 #results {
   align-items: center;
   display: flex;
+  min-height: 70vh;
   flex-wrap: wrap;
   justify-content: space-between;
+  @media screen(max-width: 768px) {
+    min-height: 70vh;
+  }
 }

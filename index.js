@@ -8,16 +8,15 @@ const pickCriteria = () => {
 }
 
 const showCountry = (country) => {
-  console.log('Data: ', country)
-
-  const cName = document.createTextNode(`${country.name.common}`)
-  cName.id = 'country-name'
-  cName.className = 'card-title'
   // country detail elements
   // create each element. assign it an id and a class name
-
-  const natName = document.createTextNode(` ${country.altSpellings[0]}`)
+  const cName = document.createElement('span')
+  cName.id = 'country-name'
+  cName.className = 'card-title'
+  cName.textContent = `${country.name.common}`
+  const natName = document.createElement('span')
   natName.id = 'aka'
+  natName.textContent = ` ${country.altSpellings[0]}`
   const offName = document.createTextNode(
     `Official Name: ${country.name.official}`
   )
@@ -30,24 +29,31 @@ const showCountry = (country) => {
   flag.src = `${country.flags.png}`
   const cardBody = document.createElement('div')
   cardBody.className = 'card-body'
-  const capital = document.createTextNode(`Capital: ${country.capital}`)
+  const capital = document.createElement('p')
   capital.id = 'capital'
   capital.className = 'card-text'
-  const languages = document.createElement('p')
+  capital.textContent = `Capital: ${country.capital}`
+  const languages = document.createTextNode(
+    `Languages: ${Object.values(country.languages)}`
+  )
   languages.id = 'languages'
   languages.className = 'card-text'
   const borders = document.createElement('p')
   borders.id = 'borders'
   borders.className = 'card-text'
+  borders.textContent = `Borders: `
   const population = document.createElement('p')
   population.id = 'population'
   population.className = 'card-text'
+  population.textContent = `Population: ${country.population}`
   const timezone = document.createElement('p')
   timezone.id = 'timezone'
   timezone.className = 'card-text'
+  timezone.textContent = `Timezone(s): ${Object.values(country.timezones)}`
   const continent = document.createElement('p')
   continent.id = 'continent'
   continent.className = 'card-text'
+  continent.textContent = `Continent: ${country.region}`
 
   //create card div element inside results div
   const result = document.createElement('div')
@@ -57,8 +63,11 @@ const showCountry = (country) => {
   result.appendChild(natName)
   result.appendChild(flag)
   cardBody.appendChild(offName)
-  cardBody.appendChild(languages)
   cardBody.appendChild(capital)
+  cardBody.appendChild(population)
+  cardBody.appendChild(continent)
+  cardBody.appendChild(timezone)
+  cardBody.appendChild(languages)
   result.appendChild(cardBody)
 
   //append result card to results div
@@ -104,9 +113,7 @@ const handleSubmit = () => {
       })
       .then((data) => {
         data.map((item) => {
-          setTimeout(() => {
-            showCountry(item)
-          }, '1000')
+          showCountry(item)
         })
       })
       .catch(
