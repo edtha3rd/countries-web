@@ -1,9 +1,14 @@
 #aka {
+  background-color: cadetblue;
   color: grey;
   font-size: small;
   margin-left: 5px;
   font-style: oblique;
   text-transform: uppercase;
+}
+
+.card-body {
+  text-align: left;
 }
 
 .card-text {
@@ -20,6 +25,25 @@
 
 #errorMessage {
   color: red;
+}
+
+#flag {
+  border: 1px solid #0077cc;
+  border-radius: 0.5rem;
+  height: 50px;
+  margin-bottom: 5px;
+  padding: 2px;
+  width: 150px;
+}
+
+#footer {
+  background-color: aliceblue;
+  bottom: 0px;
+  color: black;
+  font-size: x-large;
+  height: 72px;
+  padding-top: 30px;
+  position: absolute;
 }
 
 #results {
