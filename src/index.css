@@ -1,0 +1,30 @@
+#aka {
+  color: grey;
+  font-size: small;
+  margin-left: 5px;
+  font-style: oblique;
+  text-transform: uppercase;
+}
+
+.card-text {
+  margin: 0;
+}
+
+.card {
+  border: 2px solid #0077cc;
+  border-radius: 1rem;
+  margin: 5px;
+  padding: 12px;
+  width: 18rem;
+}
+
+#errorMessage {
+  color: red;
+}
+
+#results {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

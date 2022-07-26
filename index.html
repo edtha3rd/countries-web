@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Country Query</title>
+    <link rel="stylesheet" href="/src/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <!-- main container -->
+    <div id="container" class="container text-center">
+      <h1 id="title">Welcome to Country Query</h1>
+      <!-- second level container -->
+      <div class="container">
+        <a href="https://www.restcountries.com">
+          <span>Special Thanks to the REST Countries API</span>
+        </a>
+        <!-- container with the form -->
+        <div class="content d-flex-column">
+          <div style="margin: 5px 0px">
+            <select
+              class="form-select"
+              id="selection"
+              aria-label="Select a search criteria"
+              onchange="pickCriteria(this.value)"
+            >
+              <option selected>Pick one option</option>
+              <option value="name">Country</option>
+              <option value="region">Continent</option>
+              <option value="capital">Capital City</option>
+            </select>
+          </div>
+          <div style="margin: 5px 0px">
+            <input
+              class="rounded-pill"
+              id="input"
+              onchange="showCountry(this.value)"
+              placeholder="Please select a search criteria first"
+              style="
+                border-radius: 1rem;
+                font-size: larger;
+                height: 50px;
+                padding: 4px;
+                width: 300px;
+              "
+              type="text"
+            />
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="handleSubmit()"
+            >
+              Submit
+            </button>
+          </div>
+          <p class="text-dark" id="errorMessage"></p>
+        </div>
+        <div class="container" id="results">
+          <!-- <div class="card" style="border: 2px solid #0077cc;border-radius: 1rem;padding: 12px;width: 18rem;">
+            <h5 class="card-title" id="country-name"></h5>
+            <span
+            id="aka"
+              style="
+                color: grey;
+                font-size: small;
+                margin-left: 5px;
+                font-style: oblique;
+                text-transform: uppercase;
+              "
+            ></span>
+            <img src="..." class="card-img-top" alt="flag" id="flag" />
+            <div class="card-body">
+              <p class="card-text" id="official">Official name: </p>
+              <p class="card-text" id="capital">Capital: </p>
+              <p class="card-text" id="language">Languages: </p>
+              <p class="card-text" id="population">Population: </p>
+              <p class="card-text" id="continent">Continent: </span>
+              <p class="card-text" id="timezone">Timezone: </p>
+              <p class="card-text" id="">Borders: </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <script type="application/javascript" src="/src/index.js"></script>
+  </body>
+</html>
