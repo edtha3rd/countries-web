@@ -1,7 +1,9 @@
 #aka {
-  background-color: cadetblue;
-  color: coral;
+  background-color: #0077cc;
+  border-radius: 0.5rem;
+  color: white;
   font-size: small;
+  font-weight: bold;
   margin-left: 5px;
   font-style: oblique;
   padding: 2px;
@@ -21,6 +23,7 @@
   border-radius: 1rem;
   margin: 5px;
   padding: 12px;
+  word-wrap: break-word;
   width: 26rem;
 }
 
@@ -41,14 +44,10 @@
   background-color: aliceblue;
   bottom: 0px;
   color: black;
-  font-size: x-large;
+  font-size: large;
   height: 72px;
   padding-top: 30px;
   position: relative;
-  @media screen (max-width: 768px) {
-    font-size: large;
-    height: 48px;
-  }
 }
 
 #results {
@@ -60,4 +59,20 @@
   @media screen(max-width: 768px) {
     min-height: 70vh;
   }
+}
+
+#selection {
+  background-color: darkgrey;
+  border-radius: 1rem;
+  border-style: groove;
+  font-size: larger;
+  font-weight: bold;
+  height: 50px;
+  text-align: center;
+  width: 150px;
+}
+
+#title {
+  color: darkcyan;
+  padding: 5px 0;
 }

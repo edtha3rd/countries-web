@@ -18,7 +18,7 @@ const showCountry = (country) => {
   natName.id = 'aka'
   natName.textContent = ` ${country.altSpellings[0]}`
   const offName = document.createTextNode(
-    `Official Name: ${country.name.official}`
+    `Official Name: ${country.name.official} `
   )
   offName.id = 'aka'
   offName.className = 'card-text'
@@ -41,7 +41,9 @@ const showCountry = (country) => {
   const borders = document.createElement('p')
   borders.id = 'borders'
   borders.className = 'card-text'
-  borders.textContent = `Borders: `
+  borders.textContent = `Borders: ${
+    country.borders ? Object.values(country.borders) : 'None'
+  }`
   const population = document.createElement('p')
   population.id = 'population'
   population.className = 'card-text'
@@ -59,6 +61,7 @@ const showCountry = (country) => {
   const result = document.createElement('div')
   result.className = 'card'
 
+  //make append-ments
   result.appendChild(cName)
   result.appendChild(natName)
   result.appendChild(flag)
@@ -68,42 +71,18 @@ const showCountry = (country) => {
   cardBody.appendChild(continent)
   cardBody.appendChild(timezone)
   cardBody.appendChild(languages)
+  cardBody.appendChild(borders)
   result.appendChild(cardBody)
 
   //append result card to results div
   results.appendChild(result)
-
-  //   cName.textContent = `Country: ${country.name.common}`
-  //   offName.textContent = `Country: ${country.name.official}`
-  //   flag.textContent = `Flag: ${country.flags.png}`
-  //   capital.textContent = `Capital: ${country.capital}`
-  //   languages.textContent = `Languages: ${country.languages.toString()}`
-  //   borders.textContent = `Borders: ${country.borders.toString()}`
-  //   population.textContent = `Population: ${country.name}`
-  //   timezone.textContent = `Timezone: ${country.name}`
-  //   continent.textContent = `Continent: ${country.name}`
-  //   result.appendChild(cName)
-  //   result.appendChild(cName)
-  //   result.appendChild(cName)
-  //   result.appendChild(cName)
-  //   result.appendChild(cName)
-  //   result.appendChild(cName)
-  //   result.appendChild(cName)
-  //   result.appendChild(cName)
-  //   result.appendChild(cName)
-  //   results.appendChild(result)
 }
 
 const handleSubmit = () => {
   if (el.value !== '') {
     errorMessage.textContent = ''
     const url = `https://restcountries.com/v3.1/${selection.value}/${el.value}`
-    // axios.get(url).then((data) => {
-    //   console.log(data)
-    //   data.map((item) => {
-    //     showCountry(item)
-    //   })
-    // })
+    results.replaceChildren('')
     fetch(url)
       .then((response) => {
         if (!response.ok) {
