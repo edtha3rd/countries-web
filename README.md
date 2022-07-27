@@ -4,7 +4,7 @@ An webapp for people who want to learn about the countries of the world.
 
 ## Live Demo
 
-!['./screenshots/countries.png']('live image')
+!['live image.'](screenshots/countries.png)
 
 [Live](https://country-query.surge.sh/)
 
